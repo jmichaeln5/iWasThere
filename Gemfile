@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'seed_dump'
+
 gem 'geocoder'
 
 gem "paperclip", "~> 5.0.0"

@@ -24,17 +24,16 @@
   <strong>Comment:</strong>
   <%= @place.comment %>
 </p>
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
 
 <!-- Map Insertion Begin -->
-<h3>My Place</h3>
+<p>
+  <strong>Address:</strong>
+  <%= @place.full_street_address %>
+</p>
+
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCb7XJAeWDd5AXTQpyjeYIU93Gc7CfUpVk&callback=initMap">
@@ -44,7 +43,6 @@ src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCb7XJAeWDd5AXTQpyjeYIU93
 var lat = <%= @place.lat %>;
 var lng = <%= @place.lng %>;
 </script>
-
 <!-- Map Insertion End -->
 
 

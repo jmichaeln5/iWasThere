@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Place.create!([
+  {title: "Coyo Taco", description: "Taco place", rating: 3, comment: "Good but expensive", image_file_name: "coyo.jpg", image_content_type: "image/jpeg", image_file_size: 28537, image_updated_at: "2018-02-18 04:49:32", latitude: 25.7996904, longitude: -80.1993159, address: "2300 NW 2nd Ave", city: "Miami", state: "FL", zip: 33127},
+  {title: "Wood Tavern", description: "Bar ", rating: 3, comment: "Pretty cool bar", image_file_name: "wood.jpg", image_content_type: "image/jpeg", image_file_size: 170755, image_updated_at: "2018-02-18 04:57:01", latitude: 25.8013318, longitude: -80.1989599, address: "2531 NW 2nd Ave", city: "Miami", state: "FL", zip: 33127},
+  {title: "Wynwood Walls", description: "Art Exhibit", rating: 5, comment: "Awesome Graffiti, Love this place", image_file_name: "wynwood_walls.jpeg", image_content_type: "image/jpeg", image_file_size: 12406, image_updated_at: "2018-02-18 05:12:36", latitude: 25.8011387, longitude: -80.1993045, address: "2520 NW 2nd Ave", city: "Miami", state: "FL", zip: 33127},
+  {title: "Subs on the Run", description: "Sub spot", rating: 4, comment: "Great Subs, great price!", image_file_name: "subs_on_the_run.jpg", image_content_type: "image/jpeg", image_file_size: 172086, image_updated_at: "2018-02-18 05:15:53", latitude: 25.8029792, longitude: -80.2070763, address: "2801 NW 7th Ave", city: "Miami", state: "FL", zip: 33127}
+])
