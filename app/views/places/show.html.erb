@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @place.image.url(:medium)%>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @place.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @place.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @place.rating %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @place.comment %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @place.address %>
+</p>
+
+<!-- Map Insertion Begin -->
+<h3>My Place</h3>
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCb7XJAeWDd5AXTQpyjeYIU93Gc7CfUpVk&callback=initMap">
+</script>
+
+<script>
+var lat = <%= @place.lat %>;
+var lng = <%= @place.lng %>;
+</script>
+
+<!-- Map Insertion End -->
+
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
