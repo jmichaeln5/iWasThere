@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
+<hr>
+
 <p>
-  <strong>Photo:</strong>
-  <%= image_tag @place.image.url(:medium)%>
+  <h1> <%= @place.title %> </h1>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @place.title %>
+  <strong>Photo:</strong>
+  <%= image_tag @place.image.url(:medium)%>
 </p>
 
 <p>
