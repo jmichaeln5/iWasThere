@@ -3,8 +3,8 @@
 <h1>Places</h1>
 <hr>
 <%= link_to 'New Place', new_place_path %>
-
 <hr>
+
 <table>
   <thead>
     <tr>
@@ -27,8 +27,10 @@
         <td><%= image_tag place.image.url(:thumb)%></td>
         <td><%= place.description %></td>
         <td></td>
+        <td> </td>
         <td><%= place.rating %></td>
         <td><%= place.full_street_address %></td>
+
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

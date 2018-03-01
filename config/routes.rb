@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   devise_for :users
   resources :places
-  # root 'home#index'
-  #
-  #
-  # :user 'users/sign_out' 'devise/sessions#destroy'
+
+##########################
+########################## delete users as resource after defining nested routes
+  resources :users
+##########################
+
+# get '/users/:id' => 'users#show'
+
+
+##########################
+##########################
 
   unauthenticated do
      root :to => 'home#index'
