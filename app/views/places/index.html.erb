@@ -1,8 +1,73 @@
+
 <p id="notice"><%= notice %></p>
+
+<!-- <h1> You've Selected an Ivalid Option </h1> -->
+
+
+
+<p>
+  <!-- You have <strong> <%#= @user_places.count%> </strong> Places. -->
+  You have <strong> <%= @places%> </strong> Places.
+</p>
+
+<h1>My Places </h1>
+
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Place</th>
+        <th>Rating</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @places.order("created_at DESC").each do |user_place| %>
+        <tr>
+          <!-- <td> Added <%#= time_ago_in_words(user_place.created_at)%> ago</td> -->
+          <td><%= image_tag user_place.image.url(:medium)%></td>
+          <td><%= user_place.title %></td>
+          <td><%= user_place.rating %></td>
+          <td></td>
+
+          <td><%=link_to 'Show', user_place_path(user_place) %></td>
+          <!-- <td><%#= link_to ' Show ', user_place %> -->
+
+              <br>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <!-- Nested route begin  -->
+  <%= link_to 'Add New Place', new_user_place_path(current_user) %> |
+  <!-- Nested route end -->
+
+  <!-- <%#= link_to 'Add New Place', new_place_path(current_user) %> | -->
+   <%= link_to ' Back', :back %>
+
+
+
+
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<!-- <p id="notice"><%#= notice %></p>
 
 <h1>Places</h1>
 <hr>
-<%= link_to 'New Place', new_place_path %>
+
+<%#=link_to 'Add Place', new_user_place_path(current_user.id) %>|
 
 <hr>
 <table>
@@ -20,23 +85,23 @@
     </tr>
   </thead>
   <tbody>
-    <% @places.each do |place| %>
+    <%# @places.each do |place| %>
       <tr>
-        <td><%= link_to 'Show me', place %></td>
-        <td><%= place.title %> </td>
-        <td><%= image_tag place.image.url(:thumb)%></td>
-        <td><%= place.description %></td>
+        <td><%#= link_to 'Show me', user_place_path %></td>
+        <td><%#= place.title %> </td>
+        <td><%#= image_tag place.image.url(:thumb)%></td>
+        <td><%#= place.description %></td>
         <td></td>
-        <td><%= place.rating %></td>
-        <td><%= place.full_street_address %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= place.rating %></td>
+        <td><%#= place.full_street_address %></td>
+        <td><%#= link_to 'Edit', edit_place_path(place) %></td>
+        <td><%#= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
 
 
-<script> </script>
+<script> </script> -->

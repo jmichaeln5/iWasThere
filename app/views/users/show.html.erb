@@ -1,0 +1,79 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<%=link_to 'Add Place', new_user_place_path(@user) %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Places:</strong>
+  <%#= @user.places %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> -->
+
+
+
+
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+
+<p>
+  You have <strong> <%= @user_places.count%> </strong> Places.
+</p>
+
+<h1>My Places </h1>
+
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Place</th>
+        <th>Rating</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user_places.order("created_at DESC").each do |user_place| %>
+        <tr>
+          <!-- <td> Added <%#= time_ago_in_words(user_place.created_at)%> ago</td> -->
+          <td><%= image_tag user_place.image.url(:thumb)%></td>
+          <td><%= user_place.title %></td>
+          <td><%= user_place.rating %></td>
+
+          <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
+
+
+          <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
+
+
+<!-- non nested show begin -->
+          <td><%= link_to ' Show ', user_place %>
+<!-- non nested show end -->
+              <br>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+<hr>
+<br>
+
+
+  <!-- Nested route begin  -->
+  <%= link_to 'Add New Place', new_user_place_path(current_user) %> |
+  <!-- Nested route end -->
+
+  <!-- <%#= link_to 'Add New Place', new_place_path(current_user) %> | -->
+   <%= link_to ' Back', :back %>
