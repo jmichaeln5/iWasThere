@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-def index
-end
+  def index
+    redirect_to(current_user)
+  end
 
-def show
-end
+  def show
+    @user = User.find(params[:id])
+    @user_places = @user.places
 
+    redirect_to(root_url) unless current_user.id == @user.id
+  end
 
 end
