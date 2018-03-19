@@ -1,30 +1,40 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  # before_action :correct_user
+
+
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    redirect_to(current_user)
+    # @places = Place.where(place_id: @place).order("created_at DESC")
   end
 
   # GET /places/1
   # GET /places/1.json
   def show
+    redirect_to(root_url) unless current_user.id == @place.user.id
+
+    @place = Place.find(params[:id])
+    # @comments = Comment.where(job_id: @place).order("created_at DESC")
   end
 
   # GET /places/new
   def new
-    @place = Place.new
+    @place = current_user.places.build
   end
 
   # GET /places/1/edit
   def edit
+    @user= User.find(current_user.id)
+    redirect_to(root_url) unless current_user.id == @place.user.id
   end
 
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = current_user.places.build(place_params)
 
     respond_to do |format|
       if @place.save
@@ -54,21 +64,36 @@ class PlacesController < ApplicationController
   # DELETE /places/1
   # DELETE /places/1.json
   def destroy
+
+    @user= User.find(current_user.id)
+     redirect_to(root_url) unless current_user.id == @place.user.id
+
     @place.destroy
     respond_to do |format|
-      format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Place was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
+    ## Confirms the correct user.
+    # def correct_user
+    #  @user= User.find(current_user.id)
+    #   redirect_to(root_url) unless current_user.id == @place.user.id
+    # end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def place_params
-      params.require(:place).permit(:title, :description, :rating, :comment, :image, :address, :city, :state, :zip)
+      params.require(:place).permit(:title, :description, :rating, :comment, :image, :address, :city, :state, :zip, :user_id)
     end
+
+
+
 end

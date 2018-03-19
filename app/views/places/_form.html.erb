@@ -1,4 +1,10 @@
-<%= form_with model: @place, local: true,  html:{multipart: true} do |form| %>
+<%= form_with(model: @place, local: true) do |form| %>
+
+
+<%#= form_with(model: [ @user, @user.places.build ]) do |form| %>
+<%#= form_with model: @place.user_id, local: true,  html:{multipart: true} do |form| %>
+<%#= form_for([@job, @job.comments.build]) do |f| %>
+
 
   <% if @place.errors.any? %>
     <div id="error_explanation">
@@ -33,10 +39,15 @@
     <%= form.number_field :rating, id: :place_rating %>
   </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment, id: :place_comment %>
-  </div>
+  <!-- <div>
+    <%= "User ID" %>
+    <br>
+    <%= current_user.id %>
+    <br>
+    <% form.label :user_id %>
+    <% form.text_area :user_id, id: :current_user_id %>
+  </div> -->
+
 
 <hr>
 
@@ -61,9 +72,7 @@
 <div class="field">
   <%= form.label :zip %>
   <%= form.text_field :zip, id: :place_zip %>
-</div>
-
-<!-- Map insertion End -->
+</div>  <!-- Map insertion End -->
 
 <hr>
 
@@ -71,3 +80,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+<hr>
+
+<br>
