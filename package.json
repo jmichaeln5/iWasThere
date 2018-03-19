@@ -2,7 +2,8 @@
   "name": "iWasThere",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.1"
+    "@rails/webpacker": "^3.3.1",
+    "rails-erb-loader": "^5.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
