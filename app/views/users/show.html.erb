@@ -26,26 +26,19 @@
           <td><%= image_tag user_place.image.url(:thumb)%></td>
           <td><%= link_to "#{user_place.title}", user_place %></td>
           <td><%= user_place.rating %></td>
-
           <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
-
-
           <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
-
-
 <!-- non nested show begin -->
           <td>
-          <%= link_to 'Show', user_place %> |
-          <%= link_to 'Edit', user_place %> |
-          <%= link_to 'Delete', user_place %>
-        </td>
+            <%= link_to 'Show', user_place %>
+          </td>
 <!-- non nested show end -->
-              <br>
         </tr>
       <% end %>
     </tbody>
   </table>
-
+  
+  <br>
   <br>
 <hr>
 <br>
