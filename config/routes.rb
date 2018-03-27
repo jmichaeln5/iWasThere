@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources :users
   resources :places
 
-  resources :users do
-    resources :places #, :except => [:update, :destroy]
+  # resources :users do
+    resources :places do
+      resources :comments
+    # end
   end
 
 

@@ -2,6 +2,8 @@
 
 <%= render 'form', place: @place %>
 
+<%= link_to 'Delete Place', @place, method: :delete, data: { confirm: 'Are you sure you want to delete this place?' }%>
+<br>
+<br>
 
-<%= link_to 'Show', @place %> |
 <%= link_to 'Back', :back %>

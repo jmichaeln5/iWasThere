@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
     redirect_to(root_url) unless current_user.id == @place.user.id
 
     @place = Place.find(params[:id])
-    # @comments = Comment.where(job_id: @place).order("created_at DESC")
+    @comments = Comment.where(place_id: @place).order("created_at DESC")
   end
 
   # GET /places/new

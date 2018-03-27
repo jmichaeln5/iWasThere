@@ -1,0 +1,23 @@
+<%= form_for([@place, @place.comments.build]) do |f| %>
+<br>
+  <%= f.text_area :comment %>
+<br>
+  <%= f.submit%>
+<% end %>
+
+<br>
+
+<% @comments.each do |comment| %>
+
+<br>
+<p> <%= comment.comment %> </p>
+<p><%= time_ago_in_words(comment.created_at) %> ago</p>
+
+
+<%= link_to "Delete", [comment.place, comment], method: :delete %>
+
+<br>
+<br>
+
+<% end %>
+<br>

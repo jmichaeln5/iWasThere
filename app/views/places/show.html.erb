@@ -43,8 +43,21 @@ var lng = <%= @place.lng %>;
 
 
 <br>
-<%= link_to 'Edit ', edit_user_place_path(@place) %> |
+<%= link_to 'Edit ', edit_place_path(@place) %> |
 <%= link_to 'Delete', @place, method: :delete, data: { confirm: 'Are you sure you want to delete this place?' }%>
 <!-- <%#= link_to 'Back', user_places_path %> | -->
 <hr>
+
+
+<div>
+  <p> <%= @comments.count%>  Comments for  <%= @place.title %> </p>
+</div>
+
+<%= render 'comments/form' %>
+<br>
+
+
+
+
+
 <%= link_to 'Back', :back %>
