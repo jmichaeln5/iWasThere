@@ -17,7 +17,7 @@
        <p class="alert"><%= alert %></p>
 
        <% if current_user %>
-         <h1>Current User ID = <%= current_user.id %></h1>
+         <!-- <h1>Current User ID = <%= current_user.id %></h1> -->
        <% else %>
      <h1> Click <%= link_to 'here', new_user_registration_path %> to sign up </h1>
        <% end %>
