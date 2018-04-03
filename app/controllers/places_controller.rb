@@ -7,8 +7,13 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    redirect_to(current_user)
+    redirect_to(root_url) unless current_user
     # @places = Place.where(place_id: @place).order("created_at DESC")
+    # @user = User.find(params[:id])
+
+    @user = current_user
+    @places = @user.places
+
   end
 
   # GET /places/1
@@ -16,24 +21,31 @@ class PlacesController < ApplicationController
   def show
     redirect_to(root_url) unless current_user.id == @place.user.id
 
+    @user = current_user
     @place = Place.find(params[:id])
     @comments = Comment.where(place_id: @place).order("created_at DESC")
   end
 
   # GET /places/new
   def new
-    @place = current_user.places.build
+    redirect_to(root_url) unless current_user
+
+    @user = current_user
+    @place = @user.places.build
   end
 
   # GET /places/1/edit
   def edit
-    @user= User.find(current_user.id)
     redirect_to(root_url) unless current_user.id == @place.user.id
+
+    @user= User.find(current_user.id)
   end
 
   # POST /places
   # POST /places.json
   def create
+    redirect_to(root_url) unless current_user
+
     @place = current_user.places.build(place_params)
 
     respond_to do |format|

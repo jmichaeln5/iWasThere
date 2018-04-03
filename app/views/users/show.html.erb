@@ -1,56 +1,6 @@
-<!-- <h1>User's Show Page</h1> -->
-<!--  -->
-<%#= render template: "places/index" %>
-<!--  -->
+<!-- <h1>Users#show</h1> -->
 
-<p>
-  You have <strong> <%= @user_places.count%> </strong> Places.
-</p>
+<%#= @user.email %>
 
-<h1>My Places </h1>
-
-  <table class="center">
-    <thead>
-      <tr>
-        <th>Photo</th>
-        <th>Place</th>
-        <th>Rating</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @user_places.order("created_at DESC").each do |user_place| %>
-        <tr>
-          <!-- <td> Added <%#= time_ago_in_words(user_place.created_at)%> ago</td> -->
-          <td><%= image_tag user_place.image.url(:thumb)%></td>
-          <td><%= link_to "#{user_place.title}", user_place %></td>
-          <td><%= user_place.rating %></td>
-          <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
-          <!-- <td><%#=link_to 'Show', user_place_path(user_place) %></td> -->
-<!-- non nested show begin -->
-          <td>
-            <%= link_to 'Show', user_place %>
-          </td>
-<!-- non nested show end -->
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-  <br>
-<hr>
-<br>
-
-
-  <!-- Nested route begin  -->
-  <%= link_to 'Add New Place', new_place_path%> |
-  <!-- Nested route end -->
-
-  <!-- <%#= link_to 'Add New Place', new_place_path(current_user) %> | -->
-   <%= link_to ' Back', :back %>
-
-   <br>
-   <br>
-   <br>
+<!-- <h1>RENDERING </h1> -->
+<%= render template:'places/index' %>

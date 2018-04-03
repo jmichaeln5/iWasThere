@@ -1,20 +1,14 @@
 
 <p id="notice"><%= notice %></p>
 
-<!-- <h1> You've Selected an Ivalid Option </h1> -->
-
-
-
-<p>
-  <!-- You have <strong> <%#= @user_places.count%> </strong> Places. -->
-  You have <strong> <%= @places%> </strong> Places.
-</p>
-
-<h1>My Places </h1>
-
+<p> You have <strong> <%= @places.count%> </strong> Places. </p>
+<br>
+<h1>My Profile</h1>
+<br>
   <table class="center">
     <thead>
       <tr>
+        <!-- <th>USER ID</th> -->
         <th>Photo</th>
         <th>Place</th>
         <th>Rating</th>
@@ -26,16 +20,14 @@
       <% @places.order("created_at DESC").each do |user_place| %>
         <tr>
           <!-- <td> Added <%#= time_ago_in_words(user_place.created_at)%> ago</td> -->
+          <!-- <td><%#= user_place.user_id%></td> -->
           <td><%= image_tag user_place.image.url(:medium)%></td>
           <td><%= user_place.title %></td>
           <td><%= user_place.rating %></td>
-          <td></td>
 
-          <td><%=link_to 'Show', user_place_path(user_place) %></td>
-          <!-- <td><%#= link_to ' Show ', user_place %> -->
+          <td><%=link_to 'Show', user_place_path(@user, user_place) %></td>
+          <!-- <td><%#= link_to ' Show ', user_place %></td> -->
 
-              <br>
-          </td>
         </tr>
       <% end %>
     </tbody>
@@ -43,9 +35,4 @@
 
   <br>
 
-  <!-- Nested route begin  -->
-  <%= link_to 'Add New Place', new_user_place_path(current_user) %> |
-  <!-- Nested route end -->
-
-  <!-- <%#= link_to 'Add New Place', new_place_path(current_user) %> | -->
    <%= link_to ' Back', :back %>

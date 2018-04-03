@@ -1,0 +1,9 @@
+<h1>Editing Comment for <%= @place.title%></h1>
+
+<%= render 'form', comment: @place %>
+
+<%= link_to 'Delete comment', @comment, method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }%>
+<br>
+<br>
+
+<%= link_to 'Back', :back %>

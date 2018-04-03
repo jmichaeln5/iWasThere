@@ -16,33 +16,25 @@
 
        <p class="alert"><%= alert %></p>
 
-       <!-- <% if current_user %>
+       <% if current_user %>
          <h1>Current User ID = <%= current_user.id %></h1>
        <% else %>
      <h1> Click <%= link_to 'here', new_user_registration_path %> to sign up </h1>
        <% end %>
 
-       <hr> -->
+       <hr>
+
        <br>
 
        <% if current_user %>
-         Welcome <%=link_to "#{current_user.email}",current_user%>
-
-       <br>
-       <br>
-          <%#= link_to 'Home', root_url %>
-          <!-- <%#=link_to 'My Profile', current_user%>  -->
-
-          <!-- Nested route begin  -->
-          <%=link_to 'My Places', places_path %> |
-          <!-- Nested route end -->
-
-
-          <!-- Nested route begin  -->
-          <%=link_to 'New Place', new_place_path %> |
-          <!-- Nested route end -->
-
+          Welcome <%=link_to "#{current_user.email}",current_user%>
+          <br>
+          <br>
+          <%=link_to 'My Places', places_path(current_user) %> |
+          <%=link_to 'Add Place', new_user_place_path(current_user) %> |
           <%= link_to "Sign Out ", destroy_user_session_path, method: :get %>﻿
+          <!--  -->
+          <!--  -->
        <% else %>
           <%= link_to 'Home', root_url %> |
           <%=link_to 'Places', places_path %> |
