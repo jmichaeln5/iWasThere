@@ -53,9 +53,11 @@ var lng = <%= @place.lng %>;
 <%= link_to 'Delete', @place, method: :delete, data: { confirm: 'Are you sure you want to delete this place?' }%>
 <hr>
 <!--  -->
-<div>
-  <p> <%= @comments.count%>  Comments for  <%= @place.title %> </p>
-</div>
+<br>
+<p>
+  <%= @place.comments.count %>
+ <%=  "Comment".pluralize(@place.comments.count)%> <%= @place.title %>:
+</p>
 
 <%= render 'comments/form' %>
 <br>

@@ -1,4 +1,5 @@
 <%= form_for([@place, @place.comments.build]) do |f| %>
+
 <br>
   <%= f.text_area :comment %>
 <br>
@@ -6,10 +7,6 @@
 <% end %>
 <hr>
 <br>
-<h1>
-  <%= @place.comments.count %>
- <%=  "Comment".pluralize(@place.comments.count)%>:
-</h1>
 
 <% @comments.each do |comment| %>
 
