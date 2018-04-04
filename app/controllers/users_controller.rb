@@ -1,26 +1,30 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :checkyoself
 
   def index
-    redirect_to(current_user)
+    # => #redering places#index
+    @user = current_user
+    @places = Place.where(user_id: @user).order("created_at DESC")
   end
 
   def edit
-
   end
 
   def show
-    # @user = User.find(params[:id])
+    # => #redering places#index
     @user = current_user
-    @places = @user.places
-
-    # redirect_to(root_url) unless current_user.id == @user.id
+    @places = Place.where(user_id: @user).order("created_at DESC")
   end
 
+private
   # Never trust parameters from the scary internet, only allow the white list through.
-
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation )
+  end
+
+  def checkyoself
+    redirect_to(root_url) unless current_user
   end
 
 

@@ -15,16 +15,10 @@
     <div class="container">
 
        <p class="alert"><%= alert %></p>
-
-       <% if current_user %>
-         <!-- <h1>Current User ID = <%= current_user.id %></h1> -->
-       <% else %>
-     <h1> Click <%= link_to 'here', new_user_registration_path %> to sign up </h1>
-       <% end %>
-
-       <hr>
-
-       <br>
+        (View on Mobile for best Experience)
+<hr>
+        <br>
+        <br>
 
        <% if current_user %>
           Welcome <%=link_to "#{current_user.email}",current_user%>
@@ -44,7 +38,6 @@
        <br>
        <br>
        <hr>
-       <br>
 
       <%= yield %>
 

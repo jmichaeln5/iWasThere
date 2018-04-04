@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/directions/', to: 'places#directions'
+
+
   # post '/users/:id/places/new', to: 'places#create', as: 'place'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

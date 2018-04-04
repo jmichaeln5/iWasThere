@@ -4,16 +4,21 @@ class PlacesController < ApplicationController
   # before_action :correct_user
 
 
+  def directions
+    redirect_to(root_url) unless current_user
+
+    @user = current_user
+    @places = Place.where(user_id: @user).order("created_at DESC")
+    @place = Place.where(place_id: @place)
+  end
+
   # GET /places
   # GET /places.json
   def index
     redirect_to(root_url) unless current_user
-    # @places = Place.where(place_id: @place).order("created_at DESC")
-    # @user = User.find(params[:id])
 
     @user = current_user
-    @places = @user.places
-
+    @places = Place.where(user_id: @user).order("created_at DESC")
   end
 
   # GET /places/1
@@ -62,6 +67,8 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
+    redirect_to(root_url) unless current_user.id == @place.user.id
+
     respond_to do |format|
       if @place.update(place_params)
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }

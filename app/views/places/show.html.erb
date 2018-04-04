@@ -26,6 +26,12 @@
   <%= @place.full_street_address %>
 </p>
 
+<hr>
+<br>
+p.s. if on mobile device drag the yellow person icon onto the map for a suprise :)
+<br>
+<br>
+
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -45,19 +51,14 @@ var lng = <%= @place.lng %>;
 <br>
 <%= link_to 'Edit ', edit_user_place_path(@user, @place) %> |
 <%= link_to 'Delete', @place, method: :delete, data: { confirm: 'Are you sure you want to delete this place?' }%>
-<!-- <%#= link_to 'Back', user_places_path %> | -->
 <hr>
-
-
+<!--  -->
 <div>
   <p> <%= @comments.count%>  Comments for  <%= @place.title %> </p>
 </div>
 
 <%= render 'comments/form' %>
 <br>
-
-
-
-
+<!--  -->
 
 <%= link_to 'Back', :back %>
