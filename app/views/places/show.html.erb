@@ -7,16 +7,17 @@
 
 <p>
   <strong>Photo:</strong>
+  <br>
   <%= image_tag @place.image.url(:medium)%>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description:</strong> 
   <%= @place.description %>
 </p>
 
 <p>
-  <strong>Rating:</strong>
+  <strong>Rating:</strong> 
   <%= @place.rating %>
 </p>
 
@@ -54,12 +55,14 @@ var lng = <%= @place.lng %>;
 <hr>
 <!--  -->
 <br>
-<p>
+<h1>
   <%= @place.comments.count %>
- <%=  "Comment".pluralize(@place.comments.count)%> <%= @place.title %>:
-</p>
+ <%=  "Comment".pluralize(@place.comments.count)%> <%= @place.title %>
+</h1>
 
 <%= render 'comments/form' %>
+
+<hr>
 <br>
 <!--  -->
 
