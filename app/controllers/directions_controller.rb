@@ -13,24 +13,24 @@ class DirectionsController < ApplicationController
   # GET /directions/1
   # GET /directions/1.json
   def show
-    redirect_to(root_url) unless current_user
+    redirect_to (root_url)
   end
 
   # GET /directions/new
   def new
-    redirect_to(root_url) unless current_user
+    redirect_to(root_url)
   end
 
   # GET /directions/1/edit
   def edit
-    redirect_to(root_url) unless current_user
+    redirect_to(root_url)
   end
 
   # POST /directions
   # POST /directions.json
   def create
 
-    redirect_to(root_url) unless current_user
+    redirect_to(root_url)
     #
     #
     # @direction = Direction.new(direction_params)
@@ -49,7 +49,7 @@ class DirectionsController < ApplicationController
   # PATCH/PUT /directions/1
   # PATCH/PUT /directions/1.json
   def update
-    redirect_to(root_url) unless current_user
+    redirect_to(root_url)
 
     # respond_to do |format|
     #   if @direction.update(direction_params)
@@ -65,7 +65,7 @@ class DirectionsController < ApplicationController
   # DELETE /directions/1
   # DELETE /directions/1.json
   def destroy
-    redirect_to(root_url) unless current_user
+    redirect_to(root_url)
     # @direction.destroy
     # respond_to do |format|
     #   format.html { redirect_to directions_url, notice: 'Direction was successfully destroyed.' }
