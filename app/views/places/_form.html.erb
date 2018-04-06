@@ -23,17 +23,17 @@
 
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title %>:
     <%= form.text_field :title, id: :place_title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description %>:
     <%= form.text_area :description, id: :place_description %>
   </div>
 
   <div class="field">
-    <%= form.label :rating %>
+    <%= form.label :rating %>:
     <%= form.number_field :rating, id: :place_rating %>
   </div>
 
@@ -46,31 +46,41 @@
     <% form.text_area :user_id, id: :current_user_id %>
   </div> -->
 
-
 <hr>
 
 <!-- Map insertion Begin -->
 <p>(If you do not know the address enter the name of your place in the address field)</p>
 <div class="field">
-  <%= form.label :address %>
+  <%= form.label :address %>:
   <%= form.text_field :address, id: :place_address %>
 </div>
 
 <div class="field">
-  <%= form.label :city %>
+  <%= form.label :city %>:
   <%= form.text_field :city, id: :place_city %>
 </div>
 
 
 <div class="field">
-  <%= form.label :state %>
+  <%= form.label :state %>:
   <%= form.text_field :state, id: :place_state %>
 </div>
 
 <div class="field">
-  <%= form.label :zip %>
+  <%= form.label :zip %>:
   <%= form.text_field :zip, id: :place_zip %>
-</div>  <!-- Map insertion End -->
+</div>
+
+<hr>
+  <h1>OR</h1>
+  <div class="field">
+    <%= form.label :longitude %>:
+    <%= form.text_field :longitude, id: :place_longitude %>
+  </div>
+  <div class="field">
+    <%= form.label :latitude %>:
+    <%= form.text_field :latitude, id: :place_latitude %>
+  </div> <!-- Map insertion End -->
 
 <hr>
 

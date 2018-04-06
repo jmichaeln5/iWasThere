@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :directions
   root 'home#index'
 
 
@@ -30,8 +31,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  get '/directions/', to: 'places#directions'
-
+  # get '/directions/', to: 'directions#index'
+resources :directions
 
   # post '/users/:id/places/new', to: 'places#create', as: 'place'
 

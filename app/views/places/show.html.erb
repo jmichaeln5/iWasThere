@@ -12,12 +12,12 @@
 </p>
 
 <p>
-  <strong>Description:</strong> 
+  <strong>Description:</strong>
   <%= @place.description %>
 </p>
 
 <p>
-  <strong>Rating:</strong> 
+  <strong>Rating:</strong>
   <%= @place.rating %>
 </p>
 
@@ -34,6 +34,12 @@ p.s. if on mobile device drag the yellow person icon onto the map for a suprise 
 <br>
 
 <div id="map"></div>
+
+<p>
+  Latitude:<%= @place.lat %>
+  Longitude:<%= @place.lng %>
+</p>
+
 <!-- Replace the value of the key parameter with your own API key. -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -46,8 +52,6 @@ var lat = <%= @place.lat %>;
 var lng = <%= @place.lng %>;
 </script>
 <!-- Map Insertion End -->
-
-
 
 <br>
 <%= link_to 'Edit ', edit_user_place_path(@user, @place) %> |

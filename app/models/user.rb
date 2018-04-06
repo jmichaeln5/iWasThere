@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :places, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :directions, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

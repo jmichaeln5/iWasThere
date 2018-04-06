@@ -1,0 +1,96 @@
+
+
+<h1>DIRECTIONS</h1>
+<hr>
+
+<p>
+  <%=link_to 'Places must have ALL address fields filled for direction services', places_path(current_user) %>
+</p>
+
+<div id="floating-panel">
+
+  <b>Start: </b>
+  <select id="start">
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @places.order("created_at DESC").each do |user_place| %>
+        <tr>
+          <td>
+            <option value="<%= user_place.full_street_address %>"><%= user_place.title %></option>
+
+            <br>
+            <!-- Lat/Lng: <%#= user_place.lat %>, <%#= user_place.lng %> -->
+            <br>
+            <br>
+
+            <hr>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</select>
+
+<b>End: </b>
+<select id="end">
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.order("created_at DESC").each do |user_place| %>
+      <tr>
+        <td>
+          <option value="<%= user_place.full_street_address %>">
+            <%= user_place.title %>
+          </option>
+
+          <br>
+          <!-- Lat/Lng: <%#= user_place.lat %>, <%#= user_place.lng %> -->
+          <br>
+          <br>
+
+          <hr>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</select>
+
+
+</div>
+
+<br>
+
+<div id="map"></div>
+<div id="right-panel"></div>
+
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCb7XJAeWDd5AXTQpyjeYIU93Gc7CfUpVk&callback=initMap">
+</script>
+
+<script>
+var lat = <%= @places.first.lat %>;
+var lng = <%= @places.first.lng %>;
+</script>
+
+
+<hr>
+<br>
+<!--  -->
+
+<%= link_to 'Back', :back %>
+
+<br>
+<br>
