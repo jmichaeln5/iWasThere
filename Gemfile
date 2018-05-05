@@ -11,15 +11,14 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'popper_js'
 gem 'tether-rails'
-
-gem 'devise'
-
-gem 'seed_dump'
-
-gem 'geocoder'
-
 gem "paperclip", "~> 5.0.0"
+# gem 'carrierwave', '~> 1.0'
+# gem 'fog-aws'
+gem 'devise'
+gem 'seed_dump'
+gem 'geocoder'
 gem 'hirb'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
