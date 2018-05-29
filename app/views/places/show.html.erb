@@ -8,7 +8,7 @@
 <p>
   <strong>Photo:</strong>
   <br>
-  <%= image_tag @place.image.url(:medium)%>
+  <%= image_tag @place.image.url(:medium) if @place.image.url != nil %>
 </p>
 
 <p>
