@@ -2,11 +2,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   ##### **** For LocalHost ***** #####
-  storage :file
-
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # storage :file
+  #
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
   ##### **** For LocalHost ***** #####
 
 
@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   ##### **** For Heroku ***** #####
-  # storage :fog
+  storage :fog
   ##### **** For Heroku ***** #####
 
 
