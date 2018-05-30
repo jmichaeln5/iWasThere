@@ -13,7 +13,7 @@ gem 'popper_js'
 gem 'tether-rails'
 # gem "paperclip", "~> 5.0.0"
 gem 'carrierwave', '~> 1.0'
-# gem 'fog-aws'
+gem 'fog-aws'
 gem 'devise'
 gem 'seed_dump'
 gem 'geocoder'
