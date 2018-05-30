@@ -17,8 +17,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :place_image %>
+    <br>
+    <% if @place.image? %>
+        <br>
+        <br>
+        <%= image_tag @place.image.url, id:"place-photo-medium" %>
+        <br>
+        <br>
+        Remove Image
+        <%= form.check_box :remove_image %>
+    <% else %>
+        <%= form.file_field :image %>
+    <% end %>
+    <br>
+    <br>
   </div>
 
 
