@@ -3,8 +3,13 @@
 @import "tether";
 
 
-img .place-photo {
-  width: 500px;
+#place-photo-medium{
+  width: 150px;
+  height: auto;
+}
+
+#place-photo-large{
+  width: 300px;
   height: auto;
 }
 

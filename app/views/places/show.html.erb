@@ -8,8 +8,10 @@
 <p>
   <strong>Photo:</strong>
   <br>
-  <!-- <%= image_tag @place.image.url(:medium) if @place.image.url != nil %> -->
-  <%= image_tag @place.image.url(:medium) if @place.image.url != nil %>
+  <%#= image_tag @place.image.url(:medium)%>
+  <%#= image_tag @place.image.url if @place.image.url != nil %>
+  <%= image_tag @place.image.url, id:"place-photo-large" if @place.image.url != nil %>
+
 </p>
 
 <p>
