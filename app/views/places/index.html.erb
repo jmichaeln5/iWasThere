@@ -28,6 +28,7 @@
     </thead>
 
     <tbody>
+        <div class="container">
       <% @places.order("created_at DESC").each do |user_place| %>
         <tr>
           <!-- <td><%#= image_tag user_place.image.url, class: 'place-photo' if user_place.image.url != nil %></td> -->
@@ -45,6 +46,7 @@
 
         </tr>
       <% end %>
+      </div>
     </tbody>
   </table>
 

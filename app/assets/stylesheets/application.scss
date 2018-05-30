@@ -3,16 +3,21 @@
 @import "tether";
 
 
-#place-photo-medium{
-  width: 150px;
-  height: auto;
-}
+// #place-photo-medium{
+//   width: 150px;
+//   height: auto;
+// }
+//
+// #place-photo-large{
+//   width: 300px;
+//   height: auto;
+// }
 
-#place-photo-large{
-  width: 300px;
-  height: auto;
-}
 
+img {
+    width: auto;
+    height: 150px;
+}
 
 
 html {
